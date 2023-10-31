@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
+    <event name="techvoot_seller_save_after">
+        <observer name="techvoot_store_locator_clear_cache" instance="Techvoot\StoreLocator\Observer\CleanStoreLocatorCache" shared="false"/>
+    </event>
+    <event name="techvoot_seller_delete_after">
+        <observer name="techvoot_store_locator_clear_cache" instance="Techvoot\StoreLocator\Observer\CleanStoreLocatorCache" shared="false"/>
+    </event>
+</config>

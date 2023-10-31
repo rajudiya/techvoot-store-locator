@@ -1,0 +1,36 @@
+{
+    "techvoot_retailer_address": {
+        "column": {
+            "address_id": true,
+            "retailer_id": true,
+            "created_at": true,
+            "updated_at": true,
+            "street": true,
+            "postcode": true,
+            "city": true,
+            "region": true,
+            "region_id": true,
+            "country_id": true,
+            "latitude": true,
+            "longitude": true
+        },
+        "constraint": {
+            "PRIMARY": true,
+            "TECHVOOT_RETAILER_ADDRESS_RETAILER_ID_TECHVOOT_SELLER_ENTITY_ENTITY_ID": true,
+            "TECHVOOT_RETAILER_ADDRESS_RETAILER_ID": true
+        }
+    },
+    "techvoot_retailer_time_slots": {
+        "column": {
+            "retailer_id": true,
+            "attribute_code": true,
+            "day_of_week": true,
+            "date": true,
+            "start_time": true,
+            "end_time": true
+        },
+        "constraint": {
+            "TECHVOOT_RETAILER_TIME_SLOTS_RETAILER_ID_TECHVOOT_SELLER_ENTT_ENTT_ID": true
+        }
+    }
+}
