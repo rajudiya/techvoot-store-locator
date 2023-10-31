@@ -1,0 +1,52 @@
+{
+    "name": "techvoot/module-store-locator",
+    "type": "magento2-module",
+    "description": "Techvoot Store Locator",
+    "keywords": ["magento2", "map", "geocoding", "geolocalisation", "retail"],
+    "license": "OSL-3.0",
+    "authors": [
+        {
+            "name": "Aurélien Foucret",
+            "email": "aurelien.foucret@techvoot.fr"
+        },
+        {
+            "name": "Romain Ruaud",
+            "email": "romain.ruaud@techvoot.fr"
+        }
+    ],
+    "require": {
+        "php": "^8.1",
+        "magento/framework": ">=103.0.4",
+        "magento/module-store": ">=101.1.4",
+        "magento/module-contact": ">=100.4.4",
+        "techvoot/module-map": "^2.1",
+        "techvoot/module-retailer": "^2.0",
+        "willdurand/geocoder": "^4.4"
+    },
+    "require-dev": {
+        "techvoot/magento2-techvootlab-quality-suite": "^3.0"
+    },
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://repo.magento.com/"
+        }
+    ],
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "Techvoot\\StoreLocator\\": ""
+        }
+    },
+    "config": {
+        "allow-plugins": {
+            "magento/composer-dependency-version-audit-plugin": true,
+            "dealerdirect/phpcodesniffer-composer-installer": true
+        },
+        "sort-packages": true
+    }
+}

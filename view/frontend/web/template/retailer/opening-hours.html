@@ -1,0 +1,21 @@
+<div data-block="opening-hours-info">
+    <div class="box-title clearfix">
+        <!--<p data-bind="i18n: 'Opening Hours'"></p>-->
+        <div data-bind="html: $parent.shopStatus" class="showopeninghours current-status-shop">
+            <a href="#" onClick="return false;"></a>
+        </div>
+    </div>
+    <div class="block catalog-product-stores-availability-content" data-role="">
+        <div class="opening-hours">
+            <table class="opening-hours-table">
+                <tbody data-bind="{foreach: openingHoursList}" data-role="opening-hours-table">
+                <tr data-bind="css: { currentDay: $parent.isCurrentDay(day) == true }">
+                    <td class="opening-row" data-bind="text:day"></td>
+                    <td class="opening-row opening-row-hours" data-bind="text:hours"></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<div data-bind="afterRender: initDropdown"></div>

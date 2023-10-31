@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <update handle="techvoot_map_styles"/>
+
+    <body>
+        <attribute name="itemtype" value="http://schema.org/Store"/>
+        <attribute name="itemscope" value="itemscope"/>
+        <referenceBlock name="page.main.title">
+            <arguments>
+                <argument name="add_base_attribute" xsi:type="string">itemprop="name"</argument>
+            </arguments>
+        </referenceBlock>
+        <referenceBlock name="root">
+            <arguments>
+                <argument name="add_attribute" xsi:type="string">itemscope itemtype="http://schema.org/Store"</argument>
+            </arguments>
+        </referenceBlock>
+        <referenceContainer name="content">
+            <block class="Techvoot\StoreLocator\Block\View" name="techvoot_store_locator_retailer_view" template="Techvoot_StoreLocator::view.phtml">
+                <block class="Techvoot\StoreLocator\Block\View\Map" name="techvoot_store_locator_retailer_view.map" template="Techvoot_StoreLocator::view/map.phtml">
+                    <arguments>
+                        <argument name="jsLayout" xsi:type="array">
+                            <item name="components" xsi:type="array">
+                                <item name="store-locator-store-view" xsi:type="array">
+                                    <item name="component" xsi:type="string">techvoot-map</item>
+                                    <item name="viewBanersWrapper" xsi:type="string">Techvoot_StoreLocator/retailer/store-view/view-baners-wrap</item>
+                                    <item name="storeDetailsWrap" xsi:type="string">Techvoot_StoreLocator/retailer/store-view/view-store-details</item>
+                                    <item name="openingHoursTemplate" xsi:type="string">Techvoot_StoreLocator/retailer/store-view/open-hours-view</item>
+                                    <item name="nearbyStoreTemplate" xsi:type="string">Techvoot_StoreLocator/retailer/store-view/nearby-store</item>
+                                    <item name="nearbyStoreWrapper" xsi:type="string">Techvoot_StoreLocator/retailer/store-view/view-closest-store-wrapper</item>
+                                    <item name="children" xsi:type="array">
+                                        <item name="geocoder" xsi:type="array">
+                                            <item name="component" xsi:type="string">techvoot-geocoder</item>
+                                        </item>
+                                        <item name="baners-container" xsi:type="array">
+                                            <item name="component" xsi:type="string">uiComponent</item>
+                                            <item name="displayArea" xsi:type="string">baners-container</item>
+                                        </item>
+                                    </item>
+                                </item>
+                            </item>
+                        </argument>
+                    </arguments>
+                    <block class="Techvoot\StoreLocator\Block\View\SetStoreLink" name="techvoot_store_locator_retailer_view.setstorelink" as="setstorelink" template="Techvoot_StoreLocator::view/setStoreLink.phtml"/>
+                </block>
+            </block>
+        </referenceContainer>
+    </body>
+</page>

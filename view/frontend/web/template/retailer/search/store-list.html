@@ -1,0 +1,14 @@
+<a data-bind="attr: {href: url}" class="details-link">
+    <div class="result-item-container">
+        <div class="heading" style="display: flex">
+            <p class="name-label" style="flex: 1"><strong data-bind="text: name"></strong></p>
+        </div>
+        <div class="current-status-shop" data-bind="html: $data.shopStatus()"></div>
+        <div class="details" style="display: flex">
+            <p class="address" style="flex:1"><span data-bind="html: address"></span></p>
+            <span class="details-shop-btn"></span>
+        </div>
+    </div>
+</a>
+
+

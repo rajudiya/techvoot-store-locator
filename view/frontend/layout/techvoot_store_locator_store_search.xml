@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+
+    <body>
+        <referenceContainer name="content">
+            <block class="Techvoot\StoreLocator\Block\Search" name="techvoot_localized_retailer_search" template="search.phtml">
+                <arguments>
+                    <argument name="jsLayout" xsi:type="array">
+                        <item name="components" xsi:type="array">
+                            <item name="store-locator-search" xsi:type="array">
+                                <item name="component" xsi:type="string">techvoot-storelocator-map</item>
+                                <item name="template" xsi:type="string">Techvoot_StoreLocator/retailer/search</item>
+                                <item name="children" xsi:type="array">
+                                    <item name="geocoder" xsi:type="array">
+                                        <item name="component" xsi:type="string">techvoot-geocoder</item>
+                                        <item name="searchTitleText" xsi:type="string" translate="true">Search shop </item>
+                                        <item name="searchPlaceholderText" xsi:type="string" translate="true">City, Zipcode, Department, ...</item>
+                                        <item name="searchButtonText" xsi:type="string" translate="true">Search</item>
+                                    </item>
+                                    <item name="store-list" xsi:type="array">
+                                        <item name="component" xsi:type="string">uiComponent</item>
+                                        <item name="storeListTemplate" xsi:type="string">Techvoot_StoreLocator/retailer/search/store-list</item>
+                                        <item name="nearbyStoreTemplate" xsi:type="string">Techvoot_StoreLocator/retailer/search/nearby-store</item>
+                                        <item name="storeDetailTemplate" xsi:type="string">Techvoot_StoreLocator/retailer/search/store-detail</item>
+                                        <item name="searchResultsLabel" xsi:type="string" translate="true">%s stores</item>
+                                        <item name="nearbySearchLabel" xsi:type="string" translate="true">%s shop(s) nearby</item>
+                                        <item name="viewAllLabel" xsi:type="string" translate="true">View all</item>
+                                    </item>
+                                </item>
+                            </item>
+                        </item>
+                    </argument>
+                </arguments>
+            </block>
+        </referenceContainer>
+    </body>
+
+</page>

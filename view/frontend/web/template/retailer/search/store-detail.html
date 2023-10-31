@@ -1,0 +1,48 @@
+<div class="header">
+    <div class="image-wrapper-header" data-bind="visible: image != false">
+        <img data-bind="{attr : {src: image}}" alt="">
+    </div>
+    <div class="store-name"><h2 data-bind="text: name"></h2></div>
+    <div class="actions">
+
+    </div>
+</div>
+
+<div style="clear: both"></div>
+
+<div class="actions-toolbar">
+    <div class="opening-hours-info">
+        <div data-bind="{template: { name: schedule().openingHoursTemplate, data: schedule() }}"></div>
+    </div>
+    <div class="opening-hours-info">
+        <div data-bind="{template: { name: schedule().specialOpeningHoursTemplate, data: schedule() }}"></div>
+    </div>
+    <div class="address-info">
+        <div class="address">
+            <span data-bind="html: address"></span>
+        </div>
+    </div>
+    <div class="contact-info-block">
+        <div class="phone contact-info-item">
+            <span class="label">Tél.:</span>
+            <span class="value" data-bind="text: contact_phone"></span>
+        </div>
+        <div class="mail contact-info-item">
+            <span class="label">E-mail:</span>
+            <span class="value" data-bind="text: contact_mail"></span>
+        </div>
+    </div>
+    <div style="clear: both"></div>
+    <div class="actions">
+            <div class="details-btn">
+                <a data-bind="attr: {href: url}" class="details-btn-link"><span data-bind="i18n: 'Details'"></span></a>
+            </div>
+        <div class="directions">
+            <a target="_blank" class="directions-btn" data-bind="{ attr: { href: directionUrl }}">
+                <span class="directions-btn-icon"></span>
+                <span data-bind="{i18n: 'Go there'}"></span>
+            </a>
+        </div>
+    </div>
+
+</div> 

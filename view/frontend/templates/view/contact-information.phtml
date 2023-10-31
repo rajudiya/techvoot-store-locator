@@ -1,0 +1,61 @@
+<?php
+
+/** @var \Techvoot\StoreLocator\Block\View\ContactInformation $block */
+?>
+<?php if ($block->hasContactInformation()): ?>
+    <div class="contact-info">
+        <div class="contact-info-wrapper">
+            <h3><?= $block->escapeHtml(__('Contact')) ?></h3>
+            <table>
+                <tbody>
+                <?php if ($block->getRetailer()->getContactPhone()): ?>
+                    <tr>
+                        <td>
+                            <span><?= $block->escapeHtml(__('Telephone')) ?> : </span>
+                            <span itemprop="telephone">
+                                <?= $block->escapeHtml($block->getRetailer()->getContactPhone()) ?>
+                            </span>
+                        </td>
+                    </tr>
+                <?php endif ?>
+                <?php if ($block->getRetailer()->getContactFax()): ?>
+                    <tr>
+                        <td><span><?= $block->escapeHtml(__('Fax')) ?> : </span>
+                            <span itemprop="faxNumber">
+                                <?= $block->escapeHtml($block->getRetailer()->getContactFax()) ?>
+                            </span>
+                        </td>
+                    </tr>
+                <?php endif ?>
+                <?php if ($block->getRetailer()->getContactMail()): ?>
+                    <tr>
+                        <td>
+                            <meta itemprop="email"
+                                  content="<?= $block->escapeHtml($block->getRetailer()->getContactMail()) ?>"/>
+                            <span>
+                                <?= $block->escapeHtml(__('Mail')) ?> :
+                                <a href="mailto:<?= $block->escapeHtml($block->getRetailer()->getContactMail()) ?>">
+                                    <?= $block->escapeHtml($block->getRetailer()->getContactMail()) ?>
+                                </a>
+                            </span>
+                        </td>
+                    </tr>
+                <?php endif ?>
+                </tbody>
+                <?php if ($block->showContactForm()): ?>
+                    <tfoot>
+                        <tr>
+                            <td>
+                                <span class="contact-form-link">
+                                    <a href="<?= $block->escapeHtml($block->getContactFormUrl()) ?>">
+                                        <?= $block->escapeHtml(__('Contact Us')) ?>
+                                    </a>
+                                </span>
+                            </td>
+                        </tr>
+                    </tfoot>
+                <?php endif ?>
+            </table>
+        </div>
+    </div>
+<?php endif ?>

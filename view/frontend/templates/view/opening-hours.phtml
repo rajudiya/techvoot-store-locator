@@ -1,0 +1,20 @@
+<?php
+
+/** @var $block \Techvoot\StoreLocator\Block\View\OpeningHours */
+?>
+<div class="opening-hours-container">
+    <div class="opening-hours-info" data-bind="scope: 'techvoot-storelocator-store'">
+        <div data-bind="{template: { name: schedule().openingHoursTemplate, data: schedule() }}"></div>
+    </div>
+
+    <div class="opening-hours-info" data-bind="scope: 'techvoot-storelocator-store'">
+        <div data-bind="{template: { name: schedule().specialOpeningHoursTemplate, data: schedule() }}"></div>
+    </div>
+
+    <?php if ($block->getWeekOpeningHours()): ?>
+        <meta itemprop="openingHours" content="<?= $block->escapeHtml($block->getOpeningHoursMicroFormat()) ?>"/>
+    <?php endif ?>
+</div>
+<script type="text/x-magento-init">
+    {"*" : {"Magento_Ui/js/core/app": <?= $block->getJsLayout() ?> }}
+</script>

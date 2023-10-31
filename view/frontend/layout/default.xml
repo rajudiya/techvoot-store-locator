@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+
+    <update handle="techvoot_map_styles"/>
+
+    <body>
+        <referenceContainer name="header-wrapper">
+            <block class="Techvoot\StoreLocator\Block\StoreChooser" name="top.storelocator.chooser" template="chooser.phtml" before="top.search">
+                <arguments>
+                    <argument name="jsLayout" xsi:type="array">
+                        <item name="components" xsi:type="array">
+                            <item name="top-storelocator-chooser" xsi:type="array">
+                                <item name="component" xsi:type="string">Techvoot_StoreLocator/js/retailer/chooser</item>
+                                <item name="template" xsi:type="string">Techvoot_StoreLocator/retailer/chooser</item>
+                                <item name="children" xsi:type="array">
+                                    <item name="geocoder" xsi:type="array">
+                                        <item name="component" xsi:type="string">techvoot-geocoder</item>
+                                    </item>
+                                </item>
+                            </item>
+                        </item>
+                    </argument>
+                </arguments>
+            </block>
+        </referenceContainer>
+    </body>
+</page>
